@@ -7,6 +7,7 @@ from .nodes.both_test.acceleration_walk import AccelerationWalk
 from .nodes.both_test.drive_turn import DriveTurn
 from .nodes.both_test.walk_turn import WalkTurn
 from .nodes.both_test.autonomous_demo import AutonomousDemo
+from .nodes.sim_only_test.kinematic_inspection import KinematicsInspection
 
 PATH_PLANNING_MODES = {
     'ACCELERATION':1,
@@ -15,7 +16,8 @@ PATH_PLANNING_MODES = {
     'DRIVE_TURN':4,
     'SKID_PAD':7,
     'JUMP':5,
-    'AUTONOMOUS':6
+    'AUTONOMOUS':6,
+    'KINEMATICS':8
 }
 
 MODE_ARGS = {
@@ -60,6 +62,11 @@ class PathPlanner(Node):
             case 6:
                 auto = AutonomousDemo(self, self.mode_args)
                 self.current_mode = auto
+
+            case 8:
+                kinematics = KinematicsInspection(self, self.mode_args)
+                self.current_mode = kinematics
+
             case _:
                 acc = Acceleration(self, self.mode_args)
                 self.current_mode = acc
