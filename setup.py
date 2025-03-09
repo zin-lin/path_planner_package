@@ -6,6 +6,7 @@ package_name = 'path_planner_package'
 nodes = 'path_planner_package/nodes'
 both_tests = 'path_planner_package/nodes/both_test'
 sim = 'path_planner_package/nodes/sim_only_test'
+components = 'path_planner_package/components'
 launch = 'launch'
 
 setup(
