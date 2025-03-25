@@ -33,9 +33,9 @@ class AutonomousDemo(Mode):
         self.cycle = 1
         self.kill_check_timer.cancel()
         msg = Con2vcu()
-        msg.deg = 1.0
-        msg.mode = 0.5
-        msg.dir = 6.0  # drive forward
+        msg.deg = 0.5
+        msg.mode = 1.0
+        msg.dir = 7.0  # drive forward
         self.msg = msg
         self.publish_con2vcu()
         self.kill_check_timer = self.create_timer(12.01, self.kill_check)
@@ -66,17 +66,17 @@ class AutonomousDemo(Mode):
         match self.cycle:
             case 1:
                 msg = Con2vcu()
-                msg.deg = 1.0
-                msg.mode = 0.5
-                msg.dir = 6.0  # drive forward
+                msg.deg = 0.5
+                msg.mode = 1.0
+                msg.dir = 7.0  # drive right
                 self.msg = msg
                 self.publish_con2vcu()
 
             case 2:
                 msg = Con2vcu()
-                msg.deg = 0.5
-                msg.mode = 1.0
-                msg.dir = 7.0 # drive right
+                msg.deg = 1.0
+                msg.mode = 0.5
+                msg.dir = 6.0 # drive forward
                 self.msg = msg
                 self.publish_con2vcu()
 
