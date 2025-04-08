@@ -35,7 +35,7 @@ class AutonomousDemo(Mode):
         msg = Con2vcu()
         msg.deg = 0.5
         msg.mode = 1.0
-        msg.dir = 7.0  # drive forward
+        msg.dir = 7.0  # drive right
         self.msg = msg
         self.publish_con2vcu()
         self.kill_check_timer = self.create_timer(12.01, self.kill_check)
